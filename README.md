@@ -26,8 +26,8 @@ go get github.com/fanchann/isly
 ## Basic Usage
 
 ### CSV File Example
-
-**`data.csv`**
+or see [example](https://github.com/fanchann/isly/blob/master/_examples/main.go)
+- **`data.csv`**
 ```csv
 id,name,age,salary,is_active,scores,tags,metadata,created_at,null_value,special_chars,hex_value,binary_data
 1,John Doe,29,50000.75,true,"[90, 85, 88]","['dev', 'admin']","{'role': 'manager', 'level': 5}",2023-07-15,,@#$%^&*,0x1A3F,"b'010101'"
