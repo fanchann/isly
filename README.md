@@ -88,7 +88,7 @@ func main() {
 	}
 }
 ```
-
+ 
 ```sh
 # output
 ------------
@@ -123,6 +123,21 @@ BinaryData: 00111000
 | `isly:"field, binary"`           | Decodes binary strings into `[]byte`         |
 
 ---
+
+## Isly Benchmark
+
+```sh
+# CPU: 12th Gen Intel i3-1215U (8) @ 4.400GHz
+# need improvement in memory allocs
+
+BenchmarkReadFile-8                               111432              9444 ns/op             136 B/op          3 allocs/op
+BenchmarkUnmarshalCSVSingleStruct-8                11934            106971 ns/op           11334 B/op         99 allocs/op
+BenchmarkUnmarshalCSVMultipleStructs-8               279           3981534 ns/op          642708 B/op       8328 allocs/op
+BenchmarkWithDifferentSizes/Size-10-8               2136            537560 ns/op           68881 B/op        854 allocs/op
+BenchmarkWithDifferentSizes/Size-100-8               297           4557274 ns/op          643481 B/op       8328 allocs/op
+BenchmarkWithDifferentSizes/Size-1000-8               25          41513950 ns/op         6392851 B/op      83055 allocs/op
+BenchmarkWithDifferentSizes/Size-10000-8               2         527329355 ns/op        63998328 B/op     830194 allocs/op
+```
 
 ## License
 
