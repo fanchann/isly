@@ -18,10 +18,12 @@ func (i *newIslyComponent) ReadFile(csvFile string) error {
 }
 
 func (i *newIslyComponent) UnmarshalCSV(results interface{}) error {
+	// file must close!
+	defer i.File.Close()
+
 	if i.File == nil {
 		return fmt.Errorf("no file provided")
 	}
-	defer i.File.Close()
 
 	reader := csv.NewReader(i.File)
 
